@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CharacterList } from 'src/app/models/character-list.interface';
 import { Character } from 'src/app/models/character.interface';
 import { APIService } from 'src/app/services/api.service';
@@ -10,7 +10,8 @@ import { APIService } from 'src/app/services/api.service';
 })
 export class CharacterListComponent implements OnInit {
 
-  characterList: Character[] = [];
+  @Input() characterList: Character[] = [];
+  
   page: number = 1;
 
   constructor(private APIservice: APIService) {}
@@ -19,6 +20,7 @@ export class CharacterListComponent implements OnInit {
     this.getCharacterList()
   }
 
+  // TRAEMOS LA LISTA DE PERSONAJES
   getCharacterList() {
     if ( this.page === 42 ) {
       return

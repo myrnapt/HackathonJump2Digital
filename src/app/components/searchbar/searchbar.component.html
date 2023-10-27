@@ -1,0 +1,9 @@
+<div class="searchbar">
+  <input
+    type="text"
+    placeholder="Buscar personaje..."
+    [(ngModel)]="searchKeyword"
+    (input)="onSearch()"
+  />
+  <button (click)="onSearch()">Buscar</button>
+</div>
