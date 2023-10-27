@@ -1,0 +1,6 @@
+<ul 
+    *ngFor="let character of characterList"
+    infiniteScroll
+    (scrolled)="onScroll()">
+        <li> {{ character.name }} </li>
+</ul>
