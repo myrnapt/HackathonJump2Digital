@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { FormsModule } from '@angular/forms'; // Importa FormsModule
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'searchbar',
@@ -7,10 +6,16 @@ import { FormsModule } from '@angular/forms'; // Importa FormsModule
   styleUrls: ['./searchbar.component.css']
 })
 export class SearchbarComponent {
-  @Output() searchEvent = new EventEmitter<string>();
-  @Input() searchKeyword: string = '';
+
+  searchKeyword: string = '';
+  
+  @Output() searchKeywordEvent = new EventEmitter<string>();
 
   onSearch() {
-    this.searchEvent.emit(this.searchKeyword);
+    if (this.searchKeyword.length >= 2) {
+      this.searchKeywordEvent.emit(this.searchKeyword);
+    } else {
+      this.searchKeywordEvent.emit('')
+    }
   }
 }

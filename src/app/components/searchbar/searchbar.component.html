@@ -3,7 +3,6 @@
     type="text"
     placeholder="Buscar personaje..."
     [(ngModel)]="searchKeyword"
-    (input)="onSearch()"
+    (keyup)="onSearch()"
   />
-  <button (click)="onSearch()">Buscar</button>
 </div>

@@ -11,35 +11,42 @@ import { APIService } from 'src/app/services/api.service';
 export class CharacterListComponent implements OnInit {
 
   @Input() characterList: Character[] = [];
-  
-  page: number = 1;
+  filteredCharacterList: Character[] = []; 
+  receivedKeyword: string = '';
 
   constructor(private APIservice: APIService) {}
-
+  
   ngOnInit() {
     this.getCharacterList()
   }
 
   // TRAEMOS LA LISTA DE PERSONAJES
   getCharacterList() {
-    if ( this.page === 42 ) {
-      return
-    }
-    this.APIservice.getCharacters(this.page)
+    this.APIservice.getCharacters()
     .subscribe((data) => {
       this.characterList = data.results;
-      console.log(this.characterList);
+      this.filteredCharacterList = this.characterList;
     })
   }
 
    // SCROLL INFINITO
    onScroll(){
-    if (this.page === 42) {
-      return;
-    }
-    this.APIservice.getCharacters(++this.page)
+    this.APIservice.getCharacters()
       .subscribe((response: CharacterList) => {
         this.characterList.push(...response.results);
       })
   } 
+
+  // TRAEMOS LA KEYWORD Y FILTRAMOS
+  onReceiveSearchKeyword(keyword: string) {
+    this.receivedKeyword = keyword;
+    if (this.receivedKeyword.trim() !== '') {
+      this.filteredCharacterList = this.characterList.filter((character: Character) =>
+        character.name.toLowerCase().includes(this.receivedKeyword.toLowerCase())
+      );
+    } else {
+      this.filteredCharacterList = this.characterList;
+    }
+  }
+
  }

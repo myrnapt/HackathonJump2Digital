@@ -8,11 +8,4 @@ import { Character } from './models/character.interface';
 })
 export class AppComponent {
   
-  characterList: Character[] = [];
-  searchKeyword: string = '';
-
-  handleSearch(searchTerm: string) {
-    this.searchKeyword = searchTerm;
-  }
-
 }

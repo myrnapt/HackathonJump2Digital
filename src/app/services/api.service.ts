@@ -11,9 +11,8 @@ export class APIService {
 
   constructor(private apiService: HttpClient) { }
 
-  getCharacters(page: number): Observable<CharacterList> {
-    return this.apiService.get<CharacterList>('https://rickandmortyapi.com/api/character?page=' + page);
+  getCharacters(): Observable<CharacterList> {
+    return this.apiService.get<CharacterList>('https://rickandmortyapi.com/api/character');
   }
 
-  
 }

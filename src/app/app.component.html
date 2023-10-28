@@ -1,19 +1,12 @@
 Bienvenido a la libreria de personajes de Rick & Morty <br />
 
-<searchbar
-[searchKeyword]="searchKeyword"
-(searchEvent)="handleSearch($event)"
-></searchbar><br />
-
 <div class="container">
   <div class="row">
     <div class="col-3">
         <search-filters></search-filters>
     </div>
     <div class="col-9">
-      <character-list
-        [characterList]="characterList"
-      ></character-list>
+      <character-list></character-list>
     </div>
   </div>
 </div>
