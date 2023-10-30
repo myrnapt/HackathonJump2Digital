@@ -1,0 +1,12 @@
+.accordion {
+    width: 100%;
+}
+.btn {
+    width: 70%; /* Los botones ocuparán el 100% del ancho del acordeón */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+    margin-bottom: 5px;
+
+  }

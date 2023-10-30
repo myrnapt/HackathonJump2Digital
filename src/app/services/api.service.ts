@@ -8,11 +8,10 @@ import { CharacterList } from '../models/character-list.interface';
 })
 export class APIService {
 
-
   constructor(private apiService: HttpClient) { }
 
-  getCharacters(): Observable<CharacterList> {
-    return this.apiService.get<CharacterList>('https://rickandmortyapi.com/api/character');
+  getCharacters(page: number): Observable<CharacterList> {
+    return this.apiService.get<CharacterList>('https://rickandmortyapi.com/api/character/?page=' + page);
   }
 
 }

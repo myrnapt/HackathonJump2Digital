@@ -10,9 +10,15 @@ import { APIService } from 'src/app/services/api.service';
 })
 export class CharacterListComponent implements OnInit {
 
+  // VARIABLES
   @Input() characterList: Character[] = [];
   filteredCharacterList: Character[] = []; 
   receivedKeyword: string = '';
+  page: number = 1;
+  searchError: boolean = false;
+  selectedStatus: string = '';
+  selectedGender: string = ''; 
+  selectedRace: string = ''; 
 
   constructor(private APIservice: APIService) {}
   
@@ -22,7 +28,7 @@ export class CharacterListComponent implements OnInit {
 
   // TRAEMOS LA LISTA DE PERSONAJES
   getCharacterList() {
-    this.APIservice.getCharacters()
+    this.APIservice.getCharacters(this.page)
     .subscribe((data) => {
       this.characterList = data.results;
       this.filteredCharacterList = this.characterList;
@@ -31,22 +37,46 @@ export class CharacterListComponent implements OnInit {
 
    // SCROLL INFINITO
    onScroll(){
-    this.APIservice.getCharacters()
+    if (this.page < 42) {
+      this.page++;
+      this.APIservice.getCharacters(this.page)
       .subscribe((response: CharacterList) => {
         this.characterList.push(...response.results);
       })
+    }
   } 
 
-  // TRAEMOS LA KEYWORD Y FILTRAMOS
+  // TRAEMOS LA KEYWORD Y LOS FILTROS
   onReceiveSearchKeyword(keyword: string) {
     this.receivedKeyword = keyword;
-    if (this.receivedKeyword.trim() !== '') {
-      this.filteredCharacterList = this.characterList.filter((character: Character) =>
-        character.name.toLowerCase().includes(this.receivedKeyword.toLowerCase())
-      );
-    } else {
-      this.filteredCharacterList = this.characterList;
-    }
+    this.applyFilters();
   }
 
+  updateStatusFilter(status: string) {
+    this.selectedStatus = status;
+    this.applyFilters();
+  }
+
+  updateGenderFilter(gender: string) {
+    this.selectedGender = gender;
+    this.applyFilters();
+  }
+
+  updateRaceFilter(race: string) {
+    this.selectedRace = race;
+    this.applyFilters();
+  }
+
+  // FILTRAMOS EL RESULTADO
+  applyFilters() {
+    this.filteredCharacterList = this.characterList
+      .filter((character: Character) =>
+        character.name.toLowerCase().includes(this.receivedKeyword.toLowerCase()) &&
+        (this.selectedStatus === '' || character.status === this.selectedStatus) &&
+        (this.selectedGender === '' || character.gender === this.selectedGender) &&
+        (this.selectedRace === '' || character.species === this.selectedRace)
+      );
+
+    this.searchError = this.filteredCharacterList.length === 0;
+  }
  }
