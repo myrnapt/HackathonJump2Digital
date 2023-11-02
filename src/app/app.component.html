@@ -1,12 +1,26 @@
-Bienvenido a la libreria de personajes de Rick & Morty <br />
+<header>
+  <p class="text-white">
+    Creado por <a href="https://github.com/myrnapt">Myrna Prieto</a>
+    </p>
+    <h1 class="text-white">Bienvenido a la wiki de</h1>
+    <img
+    src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Rick_and_Morty.svg"
+      class="header-img"
+      alt="Imagen de Encabezado"
+    />
+    <button class="btn btn-lg btn-block" (click)="scrollToContent()">
+      VER PERSONAJES
+    </button>
+  </header>
 
-<div class="container">
-  <div class="row">
-    <div class="col-3">
+<body>
+    <div class="row">
+      <div class="col-lg-3 col-md-12">
         <search-filters></search-filters>
+      </div>
+      <div class="col-lg-9 col-md-12" #contentSection>
+        <character-list></character-list>
+      </div>
     </div>
-    <div class="col-9">
-      <character-list></character-list>
-    </div>
-  </div>
-</div>
+</body>
+  

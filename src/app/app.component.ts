@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { Character } from './models/character.interface';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +6,9 @@ import { Character } from './models/character.interface';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  
+  @ViewChild('contentSection') contentSection!: ElementRef;
+
+  scrollToContent(): void {
+    this.contentSection.nativeElement.scrollIntoView({ behavior: 'smooth' });
+  }
 }
