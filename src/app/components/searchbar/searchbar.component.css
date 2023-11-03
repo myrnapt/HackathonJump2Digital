@@ -2,7 +2,7 @@
     font-size: larger;
     background: #fff;
     height: auto;
-    width: 50%;
+    width: auto;
     border-radius: 30px;
     padding: 10px 20px;
     display: flex;
@@ -39,3 +39,4 @@
 .search-container:hover {
     animation: hoverShake 0.15s linear 3;
 }
+

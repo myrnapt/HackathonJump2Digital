@@ -1,12 +1,36 @@
+hr {
+    border-top: solid 2px black;
+}
 .accordion {
     width: 100%;
+    box-shadow: 0 0 20px  rgba(0, 0, 0, 0.2);
 }
 .btn {
-    width: 70%; /* Los botones ocuparán el 100% del ancho del acordeón */
+    margin: 0 auto;
+    width: 90%;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
     display: block;
     margin-bottom: 5px;
-
+    border-radius: 20px;
   }
+
+.btn-outline-success {
+    border: 2px solid rgb(81, 199, 164);
+    color: rgb(33, 102, 81);
+}
+
+@media (max-width: 991px) {
+    .accordion-body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 5px; /* Espacio entre los botones */
+    }
+
+    .btn {
+        width: auto;
+        margin-right: 5px;
+    }
+}
