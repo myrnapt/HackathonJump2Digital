@@ -15,17 +15,17 @@
             <div class="accordion-body">
                 <p>
                     <input type="radio" class="btn-check" (change)="statusFilter('Alive')"
-                     name="status-options" id="status-alive" autocomplete="off">
+                     name="options-status" id="status-alive" autocomplete="off">
                     <label class="btn btn-outline-success" for="status-alive"> Vivo </label>
                 </p>
                 <p>
                     <input type="radio" class="btn-check" (change)="statusFilter('Dead')" 
-                     name="status-options" id="status-dead" autocomplete="off">
+                     name="options-status" id="status-dead" autocomplete="off">
                     <label class="btn btn-outline-success" for="status-dead"> Fallecido </label>
                 </p>
                 <p>
-                    <input type="radio" class="btn-check" (change)="statusFilter('Unknown')" 
-                     name="status-options" id="status-unknown" autocomplete="off">
+                    <input type="radio" class="btn-check" (change)="statusFilter('unknown')" 
+                     name="options-status" id="status-unknown" autocomplete="off">
                     <label class="btn btn-outline-success" for="status-unknown"> Desconocido </label>
                 </p>                 
             </div>
@@ -44,18 +44,18 @@
             data-bs-parent="#accordionFlush">
             <div class="accordion-body">
                 <p>
-                    <input type="radio" class="btn-check" (change)="genderFilter($event)"
-                     name="gender-options" id="gender-man" autocomplete="off">
+                    <input type="radio" class="btn-check" (change)="genderFilter('Male')"
+                     name="options-gender" id="gender-man" autocomplete="off">
                     <label class="btn btn-outline-success" for="gender-man"> Hombre </label>
                 </p>
                 <p>
-                    <input type="radio" class="btn-check" (change)="genderFilter($event)"
-                     name="gender-options"  id="gender-woman" autocomplete="off">
+                    <input type="radio" class="btn-check" (change)="genderFilter('Female')"
+                     name="options-gender"  id="gender-woman" autocomplete="off">
                     <label class="btn btn-outline-success" for="gender-woman"> Mujer </label>
                 </p>
                 <p>
-                    <input type="radio" class="btn-check" (change)="genderFilter($event)"
-                     name="gender-options" id="gender-unknown" autocomplete="off">
+                    <input type="radio" class="btn-check" (change)="genderFilter('unknown')"
+                     name="options-gender" id="gender-unknown" autocomplete="off">
                     <label class="btn btn-outline-success" for="gender-unknown"> Desconocido </label>
                 </p>                 
             </div>
@@ -74,62 +74,62 @@
             data-bs-parent="#accordionFlush">
             <div class="accordion-body">
                 <p>
-                    <input type="radio" class="btn-check" (change)="speciesFilter($event)"
-                     name="species-options" id="species-human" autocomplete="off">
+                    <input type="radio" class="btn-check" (change)="speciesFilter('Human')"
+                     name="options" id="species-human" autocomplete="off">
                     <label class="btn btn-outline-success" for="species-human"> Humano </label>
                 </p>
                 <p>
-                    <input type="radio" class="btn-check" (change)="speciesFilter($event)"
-                     name="species-options"  id="species-alien" autocomplete="off">
+                    <input type="radio" class="btn-check" (change)="speciesFilter('alien')"
+                     name="options"  id="species-alien" autocomplete="off">
                     <label class="btn btn-outline-success" for="species-alien"> Alien </label>
                 </p>
                 <p>
-                    <input type="radio" class="btn-check" (change)="speciesFilter($event)"
-                     name="species-options" id="species-humanoid" autocomplete="off">
+                    <input type="radio" class="btn-check" (change)="speciesFilter('Humanoid')"
+                     name="options" id="species-humanoid" autocomplete="off">
                     <label class="btn btn-outline-success" for="species-humanoid"> Humanoide </label>
                 </p>
                 <p>
-                    <input type="radio" class="btn-check" (change)="speciesFilter($event)"
-                     name="species-options" id="species-poopybutthole" autocomplete="off">
+                    <input type="radio" class="btn-check" (change)="speciesFilter('Poopybutthole')"
+                     name="options" id="species-poopybutthole" autocomplete="off">
                     <label class="btn btn-outline-success" for="species-poopybutthole"> Poopybutthole </label>
                 </p> 
                 <p>
-                    <input type="radio" class="btn-check" (change)="speciesFilter($event)"
-                     name="species-options" id="species-mythological" autocomplete="off">
+                    <input type="radio" class="btn-check" (change)="speciesFilter('Mythological Creature')"
+                     name="options" id="species-mythological" autocomplete="off">
                     <label class="btn btn-outline-success" for="species-mythological"> Mitológico </label>
                 </p> 
                 <p>
-                    <input type="radio" class="btn-check" (change)="speciesFilter($event)"
-                     name="species-options" id="species-unknown" autocomplete="off">
+                    <input type="radio" class="btn-check" (change)="speciesFilter('Unknown')"
+                     name="options" id="species-unknown" autocomplete="off">
                     <label class="btn btn-outline-success" for="species-unknown"> Desconocido </label>
                 </p> 
                 <p>
-                    <input type="radio" class="btn-check" (change)="speciesFilter($event)"
-                     name="species-options" id="species-animal" autocomplete="off">
+                    <input type="radio" class="btn-check" (change)="speciesFilter('Animal')"
+                     name="options" id="species-animal" autocomplete="off">
                     <label class="btn btn-outline-success" for="species-animal"> Animal </label>
                 </p> 
                 <p>
-                    <input type="radio" class="btn-check" (change)="speciesFilter($event)"
-                     name="species-options" id="species-disease" autocomplete="off">
+                    <input type="radio" class="btn-check" (change)="speciesFilter('Disease')"
+                     name="options" id="species-disease" autocomplete="off">
                     <label class="btn btn-outline-success" for="species-disease"> Enfermedad </label>
                 </p> 
                 <p>
-                    <input type="radio" class="btn-check" (change)="speciesFilter($event)"
-                     name="species-options" id="species-robot" autocomplete="off">
+                    <input type="radio" class="btn-check" (change)="speciesFilter('Robot')"
+                     name="options" id="species-robot" autocomplete="off">
                     <label class="btn btn-outline-success" for="species-robot"> Robot </label>
                 </p> 
                 <p>
-                    <input type="radio" class="btn-check" (change)="speciesFilter($event)"
-                     name="species-options" id="species-cronenberg" autocomplete="off">
+                    <input type="radio" class="btn-check" (change)="speciesFilter('Cronenberg')"
+                     name="options" id="species-cronenberg" autocomplete="off">
                     <label class="btn btn-outline-success" for="species-cronenberg"> Cronenberg </label>
                 </p> 
                 <p>
-                    <input type="radio" class="btn-check" (change)="speciesFilter($event)"
-                     name="species-options" id="species-planet" autocomplete="off">
+                    <input type="radio" class="btn-check" (change)="speciesFilter('Planet')"
+                     name="options" id="species-planet" autocomplete="off">
                     <label class="btn btn-outline-success" for="species-planet"> Planeta </label>
                 </p>                  
             </div>
         </div>
     </div>
 </div>
-
+<button class="btn btn-secondary mt-3" (click)="deselectAllFilters()">Borrar filtros</button>

@@ -19,7 +19,7 @@ export class CharacterListComponent implements OnInit {
   searchError: boolean = false;
   selectedStatus: string = '';
   selectedGender: string = ''; 
-  selectedRace: string = ''; 
+  selectedSpecies: string = ''; 
   isLoading: boolean = false;
 
   constructor(private APIservice: APIService) {}
@@ -66,13 +66,23 @@ export class CharacterListComponent implements OnInit {
 
   updateGenderFilter(gender: string) {
     this.selectedGender = gender;
+    console.log(gender);
     this.applyFilters();
   }
 
-  updateRaceFilter(race: string) {
-    this.selectedRace = race;
+  updateSpeciesFilter(species: string) {
+    this.selectedSpecies = species;
+    console.log(species);
     this.applyFilters();
   }
+
+  deselectAllFilters() {
+    this.selectedStatus = ''; // Restablecer el valor del filtro de estado
+    this.selectedGender = ''; // Restablecer el valor del filtro de género
+    this.selectedSpecies = ''; // Restablecer el valor del filtro de especie
+    this.applyFilters(); // Aplicar cambios
+  }
+  
 
   // FILTRAMOS EL RESULTADO
   applyFilters() {
@@ -81,9 +91,9 @@ export class CharacterListComponent implements OnInit {
         character.name.toLowerCase().includes(this.receivedKeyword.toLowerCase()) &&
         (this.selectedStatus === '' || character.status === this.selectedStatus) &&
         (this.selectedGender === '' || character.gender === this.selectedGender) &&
-        (this.selectedRace === '' || character.species === this.selectedRace)
+        (this.selectedSpecies === '' || character.species.toLowerCase() === this.selectedSpecies.toLowerCase())
       );
-
     this.searchError = this.filteredCharacterList.length === 0;
   }
+  
  }

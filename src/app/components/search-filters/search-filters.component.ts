@@ -8,17 +8,28 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class SearchFiltersComponent {
 
   @Output() statusFilterEvent = new EventEmitter<string>();
+  @Output() genderFilterEvent = new EventEmitter<string>();
+  @Output() speciesFilterEvent = new EventEmitter<string>();
+  @Output() deselectAllFiltersEvent = new EventEmitter<string>();
+
 
   statusFilter(status: string) {
     this.statusFilterEvent.emit(status);
   }
 
-  genderFilter(event: any) {
-    console.log('prueba2', event.target.value);
+  genderFilter(gender: string) {
+    this.genderFilterEvent.emit(gender);
   }
 
-  speciesFilter(event: any) {
-    console.log('prueba3', event.target.value);
+  speciesFilter(species: string) {
+    this.speciesFilterEvent.emit(species);
   }
+
+  deselectAllFilters() {
+    this.statusFilterEvent.emit('');
+    this.genderFilterEvent.emit('');
+    this.speciesFilterEvent.emit('');
+  }
+  
 
 }

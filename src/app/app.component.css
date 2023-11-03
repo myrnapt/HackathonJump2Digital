@@ -41,13 +41,14 @@ header {
 }
 
 .btn {
-    font-size: 1.8em;
+    font-size: 1.5em;
     width: fit-content;
     height: 65px;
     border-radius: 35px;
     background-color: #0ee782;
     margin-top: 3%;
     margin-bottom: 10%;
+    box-shadow: 0 0 15px rgb(76, 134, 89);
     transition: background-color 0.3s, color 0.3s, opacity 0.3s;
 }
 

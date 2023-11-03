@@ -1,45 +1,55 @@
-
 <div class="container mt-3">
   <div class="row">
-    <div class="col-md-12 col-lg-6">
-      <searchbar (searchKeywordEvent)="onReceiveSearchKeyword($event)"></searchbar>
-    </div>
+    <div class="col-12 col-lg-3 mb-5">
+      <search-filters 
+      (statusFilterEvent)="updateStatusFilter($event)"
+      (genderFilterEvent)="updateGenderFilter($event)"
+      (deselectAllFiltersEvent)="deselectAllFilters()"
+      (speciesFilterEvent)="updateSpeciesFilter($event)">
+    </search-filters>
   </div>
-  <div class="row">
-    <div *ngIf="searchError">
-      <p class="fs-3 mt-3">
-        ¡Ups! No hemos encontrado personajes con ese nombre, por favor prueba
-        otra búsqueda.
-      </p>
-    </div>
-    <ng-container >
-      <div
-      class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3"
-      *ngFor="let character of filteredCharacterList"
-      infiniteScroll
-      (scrolled)="onScroll()">
-      <div class="card">
-        <img
-          src="{{ character.image }}"
-          alt="Foto del personaje"
-          class="card-img"
-        />
-        <div class="card-img-overlay">
-          <h5 class="card-title">{{ character.name | uppercase}} <br>
-           <p class="card-subtitle"> {{ character.gender | titlecase }}  </p> <br>
-          </h5>
-          <p class="card-text">
-            <b> Especie:</b> {{ character.species | titlecase }}  <br>
-            <b> Origen: </b>{{ character.origin.name | titlecase }}  <br>
-            <b> Estado: </b> {{ character.status | titlecase }} </p>
+  <div class="col-12 col-lg-9">
+      <div class="row">
+        <div class="col-lg-6 col-xl-9">
+          <searchbar (searchKeywordEvent)="onReceiveSearchKeyword($event)"></searchbar>
+        </div>      
+      </div>
+      <div class="row"><div *ngIf="searchError">
+        <p class="fs-3 mt-3">
+          ¡Ups! No hemos encontrado personajes con ese nombre, por favor prueba
+          otra búsqueda.
+        </p>
+      </div>
+      <ng-container >
+        <div
+        class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3"
+        *ngFor="let character of filteredCharacterList"
+        infiniteScroll
+        (scrolled)="onScroll()">
+        <div class="card">
+          <img
+            src="{{ character.image }}"
+            alt="Foto del personaje"
+            class="card-img"
+          />
+          <div class="card-img-overlay">
+            <h5 class="card-title">{{ character.name | uppercase}} <br>
+             <p class="card-subtitle"> {{ character.gender | titlecase }}  </p> <br>
+            </h5>
+            <p class="card-text">
+              <b> Especie:</b> {{ character.species | titlecase }}  <br>
+              <b> Origen: </b>{{ character.origin.name | titlecase }}  <br>
+              <b> Estado: </b> {{ character.status | titlecase }} </p>
+          </div>
         </div>
       </div>
+    </ng-container>
+    <div class="col-12 text-center mt-5" *ngIf="isLoading">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Cargando...</span>
+      </div>
     </div>
-  </ng-container>
-  <div class="col-12 text-center mt-5" *ngIf="isLoading">
-    <div class="spinner-border" role="status">
-      <span class="visually-hidden">Cargando...</span>
-    </div>
+  </div>
   </div>
 </div>
 </div>

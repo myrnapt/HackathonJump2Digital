@@ -7,6 +7,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 })
 export class AppComponent {
   @ViewChild('contentSection') contentSection!: ElementRef;
+  
 
   scrollToContent(): void {
     this.contentSection.nativeElement.scrollIntoView({ behavior: 'smooth' });
