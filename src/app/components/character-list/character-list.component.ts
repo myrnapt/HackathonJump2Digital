@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { delay } from 'rxjs';
 import { CharacterList } from 'src/app/models/character-list.interface';
 import { Character } from 'src/app/models/character.interface';
 import { APIService } from 'src/app/services/api.service';
@@ -19,6 +20,7 @@ export class CharacterListComponent implements OnInit {
   selectedStatus: string = '';
   selectedGender: string = ''; 
   selectedRace: string = ''; 
+  isLoading: boolean = false;
 
   constructor(private APIservice: APIService) {}
   
@@ -28,10 +30,15 @@ export class CharacterListComponent implements OnInit {
 
   // TRAEMOS LA LISTA DE PERSONAJES
   getCharacterList() {
+    this.isLoading = true;
     this.APIservice.getCharacters(this.page)
+    .pipe(
+      delay(3000)
+    )
     .subscribe((data) => {
       this.characterList = data.results;
       this.filteredCharacterList = this.characterList;
+      this.isLoading = false;
     })
   }
 

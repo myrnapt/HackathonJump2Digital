@@ -1,3 +1,4 @@
+
 <div class="container mt-3">
   <div class="row">
     <div class="col-md-12 col-lg-6">
@@ -11,7 +12,8 @@
         otra búsqueda.
       </p>
     </div>
-    <div
+    <ng-container >
+      <div
       class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3"
       *ngFor="let character of filteredCharacterList"
       infiniteScroll
@@ -33,5 +35,11 @@
         </div>
       </div>
     </div>
+  </ng-container>
+  <div class="col-12 text-center mt-5" *ngIf="isLoading">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Cargando...</span>
+    </div>
   </div>
+</div>
 </div>
