@@ -1,14 +1,17 @@
 # Esta es mi presentación para la prueba de FrontEnd de la hackathon Jump2Digital 2023.
 
 **1. Tecnología utilizada:**
+
    Angular v16 con Bootstrap
 
 **2. Instalación:**
+
   Descarge el repositorio o clonelo a través del comando `git clone`.
   En la terminal introduce el comando `npm install`
   Para arrancar el proyecto en local host usar el comando `ng serve -open `
 
 **3. Estructura del proyecto:**
+
    Esta app contiene 3 componentes, un servicio, y dos fichas de modelos.
    En el html principal (app.component.html) encontramos la cabecera de la web y un botón que nos hace scroll automático hacia los componentes.
    Utilizamos tres componentes: `Character-List` (padre), `Searchbar` (hijo), y `Searchbar-Filter` (hijo).
@@ -18,6 +21,7 @@
    Para tener un mayor control sobre las propiedades y evitar posibles errores, he creado dos ficheros de interfaces. Uno para los resultados de la llamada a la API y otro para cada personaje individual.
 
 **4. Demo:**
+
   La demo de este proyecto está disponible en Vercel haciendo click [aqui](https://hackathon-jump2-digital.vercel.app/)
 
 ¡Muchas gracias por la oportunidad y espero que les agrade mi propuesta!
