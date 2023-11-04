@@ -14,7 +14,7 @@
 
 **3. Estructura del proyecto:**
 
-	Esta app contiene 3 componentes, un servicio, y dos fichas de modelos.
+ Esta app contiene 3 componentes, un servicio, y dos fichas de modelos.
  	
 	En el html principal (app.component.html) encontramos la cabecera de la web y un botón que nos hace scroll automático hacia los componentes.
    
