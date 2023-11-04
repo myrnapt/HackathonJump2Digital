@@ -18,6 +18,6 @@
    Para tener un mayor control sobre las propiedades y evitar posibles errores, he creado dos ficheros de interfaces. Uno para los resultados de la llamada a la API y otro para cada personaje individual.
 
 **4. Demo:**
-  La demo de este proyecto está disponible en Vercel haciendo click **`[aqui](https://pages.github.com/](https://hackathon-jump2-digital.vercel.app/)`**
+  La demo de este proyecto está disponible en Vercel haciendo click [aqui](https://pages.github.com/](https://hackathon-jump2-digital.vercel.app/)
 
 ¡Muchas gracias por la oportunidad y espero que les agrade mi propuesta!
