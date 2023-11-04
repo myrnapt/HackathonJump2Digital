@@ -1,29 +1,23 @@
-Estructura de la documentación:
-1. Descripción del proyecto:
-Presentación del proyecto, su propósito y objetivos.
-2. Pila tecnológica:
-Listado de tecnologías utilizadas, por ejemplo:
-Frontend: (Ej. Angular, React, Vue.js)
-Backend: (Ej. Node.js, Python, Java)
-Base de datos: (Ej. MongoDB, MySQL, PostgreSQL)
-Herramientas adicionales: (Ej. Docker, Git, Webpack)
-Cualquier otra herramienta o tecnología relevante.
-3. Instalación y Configuración:
-Instrucciones detalladas para configurar el entorno de desarrollo.
-Requisitos previos, como versiones específicas de software o librerías.
-Comandos de instalación para dependencias, si es necesario.
-4. Estructura del proyecto:
-Explicación de la estructura de directorios y archivos.
-Descripción de los componentes principales del proyecto.
-5. Instrucciones para poner en marcha el proyecto:
-Comandos para iniciar el servidor local (para frontend y backend, si es aplicable).
-Ejemplos de comandos para correr la aplicación en diferentes entornos (desarrollo, producción, etc.).
-6. Demo:
-Enlace a una demo en línea si está disponible.
-7. FAQ:
-Preguntas frecuentes, si es relevante.
-8. Contacto:
-Información para contactar al equipo de desarrollo o mantener el proyecto.
-Enlace a una demo:
-Si tienes una demo en línea, asegúrate de proporcionar el enlace en la documentación. Puedes alojar tu proyecto en plataformas como GitHub Pages, Netlify, Heroku u otras plataformas de alojamiento web para ofrecer acceso público.
-Recuerda que la documentación es una herramienta crucial para los desarrolladores, por lo que debe ser clara, concisa y actualizada. Si bien la estructura presentada es general, se puede ajustar según las necesidades y las tecnologías específicas que utilices en tu proyecto.
+# Esta es mi presentación para la prueba de FrontEnd de la hackathon Jump2Digital 2023.
+
+**1. Tecnología utilizada:**
+   Angular v16 con Bootstrap
+
+**2. Instalación:**
+  Descarge el repositorio o clonelo a través del comando `git clone`.
+  En la terminal introduce el comando `npm install`
+  Para arrancar el proyecto en local host usar el comando `ng serve -open `
+
+**3. Estructura del proyecto:**
+   Esta app contiene 3 componentes, un servicio, y dos fichas de modelos.
+   En el html principal (app.component.html) encontramos la cabecera de la web y un botón que nos hace scroll automático hacia los componentes.
+   Utilizamos tres componentes: `Character-List` (padre), `Searchbar` (hijo), y `Searchbar-Filter` (hijo).
+   En el componente principal conectamos el servicio con el cual llamamos a la API mediante una llamada http. Al tener renderizada la lista de personajes, creamos un scroll infinito y ya podemos comenzar a llamar las funciones de los filtros creadas en los componentes hijos. Usamos Inputs y Outputs para enviar la información entre componentes.
+   En componente searchbar el input toma en tiempo real los caracteres que estamos escribiendo y los compara con el character name de todos los personajes de la lista, enseñando solo los que coinciden.
+   En el componente searbarch-filters tenemos varios botones radio para elegir buscar personajes según su estado, género, o especie. Solo puede seleccionarse una de las opciones de cada categoría y si se desea resetear la búsqueda se ha proveído de un botón para ello. Estos filtros funcionan similar a la searchbar, comparando el término seleccionado de los botones con las propiedades de los personajes.
+   Para tener un mayor control sobre las propiedades y evitar posibles errores, he creado dos ficheros de interfaces. Uno para los resultados de la llamada a la API y otro para cada personaje individual.
+
+**4. Demo:**
+  La demo de este proyecto está disponible en Vercel haciendo click aqui.
+
+¡Muchas gracias por la oportunidad y espero que les agrade mi propuesta!
