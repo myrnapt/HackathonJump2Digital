@@ -76,11 +76,12 @@ export class CharacterListComponent implements OnInit {
     this.applyFilters();
   }
 
+  // BORRAR FILTROS
   deselectAllFilters() {
-    this.selectedStatus = ''; // Restablecer el valor del filtro de estado
-    this.selectedGender = ''; // Restablecer el valor del filtro de género
-    this.selectedSpecies = ''; // Restablecer el valor del filtro de especie
-    this.applyFilters(); // Aplicar cambios
+    this.selectedStatus = ''; 
+    this.selectedGender = ''; 
+    this.selectedSpecies = ''; 
+    this.applyFilters(); 
   }
   
 

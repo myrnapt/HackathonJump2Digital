@@ -1,23 +1,22 @@
-<header>
-  <p class="text-white">
-    Creado por <a href="https://github.com/myrnapt">Myrna Prieto</a>
+<div class="container">
+  <header>
+    <p class="text-white">
+      Creado por <a href="https://github.com/myrnapt">Myrna Prieto</a>
     </p>
     <h1 class="text-white">Bienvenido a la wiki de</h1>
     <img
-    src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Rick_and_Morty.svg"
+      src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Rick_and_Morty.svg"
       class="header-img"
-      alt="Imagen de Encabezado"
-    />
+      alt="Imagen de Encabezado" />
     <button class="btn btn-lg btn-block" (click)="scrollToContent()">
       VER PERSONAJES
     </button>
   </header>
-
-<body>
+  <div class="body">
     <div class="row">
-      <div class="col-12" #contentSection>
+      <div class="col" #contentSection>
         <character-list></character-list>
       </div>
     </div>
-</body>
-  
+  </div>
+</div>

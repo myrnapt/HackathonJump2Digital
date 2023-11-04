@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
 
-body {
+.container {
+    max-width: 100%;
+    padding: 0px;
+    overflow-x: hidden;
+}
+.body {
     background: #5ae085;
     width: 100vw;
     padding-left: 30px;
@@ -37,7 +42,7 @@ header {
     width: 75vw;
     height: auto;
     display: block;
-    padding: 0;
+    padding: 0px;
 }
 
 .btn {
@@ -59,7 +64,6 @@ header {
 
 .search-filters {
     display: block !important;
-    /* Asegura que sea visible en pantallas más grandes */
 }
 
 @media (max-width: 1000px) {
