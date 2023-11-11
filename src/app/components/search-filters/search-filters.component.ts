@@ -6,7 +6,21 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./search-filters.component.css']
 })
 export class SearchFiltersComponent {
-
+  states: string[] = ['Alive', 'Dead', 'Unknown'];
+  genders: string[] = ['Male', 'Female', 'Unknown'];
+  species: string[] = [
+    'Human',
+    'Alien',
+    'Humanoid',
+    'Poopybutthole',
+    'Mythological Creature',
+    'Unknown',
+    'Animal',
+    'Disease',
+    'Robot',
+    'Cronenberg',
+    'Planet'
+  ];
 
 // ENVIAMOS LOS FILTROS AL PADRE
   @Output() statusFilterEvent = new EventEmitter<string>();
