@@ -1,4 +1,4 @@
-# Pprueba de FrontEnd para la hackathon Jump2Digital 2023.
+# Prueba de FrontEnd para la hackathon Jump2Digital 2023.
 
 **1. Tecnología utilizada:**
 
